@@ -43,7 +43,7 @@ export default function Index() {
   }, [state]);
 
   return (
-    <App title="Create your own AI chat bot">
+    <App title="TravelMate">
       <main className="bg-white md:rounded-lg md:shadow-md p-6 w-full h-full flex flex-col">
         <section className="overflow-y-auto flex-grow mb-4 pb-8">
           <div className="flex flex-col space-y-4">
@@ -90,7 +90,7 @@ export default function Index() {
               className="bg-gray-100 text-gray-900 py-2 px-4 my-8"
               onClick={cancel}
             >
-              Stop generating
+              Detener generación
             </button>
           )}
         </div>
@@ -113,7 +113,7 @@ export default function Index() {
                   setMessage("");
                 }}
               >
-                Clear
+                Limpiar
               </button>
             ) : null}
             <input
@@ -127,10 +127,10 @@ export default function Index() {
             />
             {state === "idle" ? (
               <button
-                className="bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg"
+                className="bg-green-700 text-white font-bold py-2 px-4 rounded-r-lg"
                 type="submit"
               >
-                Send
+                Enviar
               </button>
             ) : null}
           </form>
