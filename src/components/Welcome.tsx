@@ -6,10 +6,5 @@ export const Welcome: React.FC = () => (
       Imagina tener a alguien que te guíe en cada paso del camino, desde planificar tu itinerario hasta descubrir los
       tesoros ocultos de tu destino.
     </p>
-    <p>
-      <a className="underline" href="https://github.com/ascorbic/daneel#readme">
-        Build your own
-      </a>
-    </p>
   </div>
 );
