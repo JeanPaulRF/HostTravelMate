@@ -159,6 +159,7 @@ export default function Index() {
 
             {/* Nuevo botón para cargar imágenes */}
             <input
+              className="bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg"
               type="file"
               accept="image/*"
               onChange={handleImageChange}
@@ -166,6 +167,7 @@ export default function Index() {
 
             {/* Nuevo botón para cargar audios */}
             <input
+              className="bg-purple-700 text-white font-bold py-2 px-4 rounded-r-lg"
               type="file"
               accept="audio/*"
               onChange={handleAudioChange}
