@@ -14,65 +14,7 @@ export default function Index() {
   const googleSpeechToTextApiKey = process.env.REACT_APP_GOOGLE_SPEECH_TO_TEXT_API_KEY;
 
 
-  // Configurar el cliente de Vision IA de Google
-  const visionClient = new ImageAnnotatorClient({
-    credentials: {
-      private_key: googleVisionApiKey,
-      client_email: 'travelmate@golden-ego-401716.iam.gserviceaccount.com',
-    },
-  });
-
-  // Configurar el cliente de Speech-to-Text de Google
-  const speechClient = new SpeechClient({
-    credentials: {
-      private_key: googleSpeechToTextApiKey,
-      client_email: 'travelmate@golden-ego-401716.iam.gserviceaccount.com',
-    },
-  });
-
-  // Ahora puedes usar visionClient y speechClient para hacer solicitudes a las respectivas APIs.
-  // Por ejemplo, aquí tienes un ejemplo de cómo usar Google Vision API para analizar una imagen:
-
-  async function analyzeImage(imagePath) {
-    const [result] = await visionClient.textDetection(imagePath);
-    const text = result.fullTextAnnotation.text;
-    console.log('Texto en la imagen:', text);
-  }
-
-  // Llama a la función de análisis de imagen
-  //const imagePath = 'path/to/your/image.jpg';
-  //analyzeImage(imagePath);
-
-
-  // Función para transcribir un archivo de audio en texto
-  async function transcribeAudio(audioPath) {
-    const config = {
-      encoding: 'LINEAR16',
-      sampleRateHertz: 16000,
-      languageCode: 'es-US', // Cambia esto al código del idioma de tu audio si es diferente
-    };
-
-    const audio = {
-      content: audioPath,
-    };
-
-    const request = {
-      audio: audio,
-      config: config,
-    };
-
-    // Realiza la transcripción
-    const [response] = await speechClient.recognize(request);
-    const transcription = response.results
-      .map(result => result.alternatives[0].transcript)
-      .join('\n');
-
-    console.log('Texto en el audio:', transcription);
-  }
-
-  // Llama a la función de transcripción con la ruta al archivo de audio
-  //const audioPath = 'path/to/your/audio.wav';
-  //transcribeAudio(audioPath);
+  
 
 
 
@@ -114,43 +56,6 @@ export default function Index() {
   useEffect(() => {
     focusInput();
   }, [state]);
-
-  const handleImageUpload = async (image) => {
-    const client = new ImageAnnotatorClient();
-    const [result] = await client.textDetection(image.path);
-    const text = result.fullTextAnnotation.text;
-    sendMessage(`Texto en la imagen: ${text}`, chatHistory);
-  };
-
-  const handleAudioUpload = async (audio) => {
-    const client = new SpeechClient();
-    const config = {
-      encoding: 'LINEAR16',
-      sampleRateHertz: 16000,
-      languageCode: 'es-US',
-    };
-
-    const audioBytes = audio.buffer.toString('base64');
-    const audioData = {
-      content: audioBytes,
-    };
-
-    const [response] = await client.recognize(config, audioData);
-    const transcription = response.results
-      .map((result) => result.alternatives[0].transcript)
-      .join('\n');
-    sendMessage(`Texto en el audio: ${transcription}`, chatHistory);
-  };
-
-  const handleImageChange = (e) => {
-    const image = e.target.files[0];
-    handleImageUpload(image);
-  };
-
-  const handleAudioChange = (e) => {
-    const audio = e.target.files[0];
-    handleAudioUpload(audio);
-  };
 
   return (
     <App title="TravelMate">
