@@ -59,42 +59,7 @@ export default function Index() {
     focusInput();
   }, [state]);
 
-  const handleImageUpload = async (image) => {
-    const client = new ImageAnnotatorClient();
-    const [result] = await client.textDetection(image.path);
-    const text = result.fullTextAnnotation.text;
-    sendMessage(`Texto en la imagen: ${text}`, chatHistory);
-  };
 
-  const handleAudioUpload = async (audio) => {
-    const client = new SpeechClient();
-    const config = {
-      encoding: 'LINEAR16',
-      sampleRateHertz: 16000,
-      languageCode: 'es-US',
-    };
-
-    const audioBytes = audio.buffer.toString('base64');
-    const audioData = {
-      content: audioBytes,
-    };
-
-    const [response] = await client.recognize(config, audioData);
-    const transcription = response.results
-      .map((result) => result.alternatives[0].transcript)
-      .join('\n');
-    sendMessage(`Texto en el audio: ${transcription}`, chatHistory);
-  };
-
-  const handleImageChange = (e) => {
-    const image = e.target.files[0];
-    handleImageUpload(image);
-  };
-
-  const handleAudioChange = (e) => {
-    const audio = e.target.files[0];
-    handleAudioUpload(audio);
-  };
 
   return (
     <App title="TravelMate">
