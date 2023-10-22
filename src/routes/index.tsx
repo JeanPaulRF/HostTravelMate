@@ -9,18 +9,6 @@ import { SpeechClient } from '@google-cloud/speech';
 
 
 export default function Index() {
-  const vision = require('@google-cloud/vision');
-  const speech = require('@google-cloud/speech');
-
-  // Obtén las claves de API desde las variables de entorno
-  const googleVisionApiKey = process.env.GOOGLE_VISION_API_KEY;
-  const googleSpeechToTextApiKey = process.env.GOOGLE_SPEECH_TO_TEXT_API_KEY;
-
-
-
-
-
-
 
 
   // The content of the box where the user is typing
