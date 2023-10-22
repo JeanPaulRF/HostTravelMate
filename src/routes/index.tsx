@@ -10,26 +10,7 @@ export default function Index() {
   const vision = require('@google-cloud/vision');
   const speech = require('@google-cloud/speech');
 
-  // Obtén las claves de API desde las variables de entorno
-  const googleVisionApiKey = process.env.REACT_APP_GOOGLE_VISION_API_KEY;
-  const googleSpeechToTextApiKey = process.env.REACT_APP_GOOGLE_SPEECH_TO_TEXT_API_KEY;
-
-
-  // Configurar el cliente de Vision IA de Google
-  const visionClient = new vision.ImageAnnotatorClient({
-    credentials: {
-      private_key: googleVisionApiKey,
-      client_email: 'travelmate@golden-ego-401716.iam.gserviceaccount.com',
-    },
-  });
-
-  // Configurar el cliente de Speech-to-Text de Google
-  const speechClient = new speech.SpeechClient({
-    credentials: {
-      private_key: googleSpeechToTextApiKey,
-      client_email: 'travelmate@golden-ego-401716.iam.gserviceaccount.com',
-    },
-  });
+  
 
   
 
