@@ -3,7 +3,10 @@ import type { AppConfig } from "./lib/edge/types.ts";
 import { prompt } from "./prompts/movie-critic.ts";
 // import { prompt } from "./prompts/tour-guide.ts";
 
+import "https://deno.land/x/dotenv/load.ts";
+
 export const appConfig: AppConfig = {
+  // Importa el paquete dotenv al principio de tu archivo JavaScript
   // This should be set in an environment variable
   // See https://platform.openai.com/account/api-keys
   OPENAI_API_KEY: Deno.env.get("OPENAI_API_KEY") ?? "",

@@ -4,9 +4,6 @@ import { useChat } from "../hooks/use-chat";
 import { ChatMessage } from "../components/ChatMessage";
 import { appConfig } from "../../config.browser";
 import { Welcome } from "../components/Welcome";
-import { ImageAnnotatorClient } from '@google-cloud/vision';
-import { SpeechClient } from '@google-cloud/speech';
-
 
 export default function Index() {
   // The content of the box where the user is typing
@@ -44,43 +41,6 @@ export default function Index() {
   useEffect(() => {
     focusInput();
   }, [state]);
-
-  const handleImageUpload = async (image) => {
-    const client = new ImageAnnotatorClient();
-    const [result] = await client.textDetection(image.path);
-    const text = result.fullTextAnnotation.text;
-    sendMessage(`Texto en la imagen: ${text}`, chatHistory);
-  };
-
-  const handleAudioUpload = async (audio) => {
-    const client = new SpeechClient();
-    const config = {
-      encoding: 'LINEAR16',
-      sampleRateHertz: 16000,
-      languageCode: 'es-US',
-    };
-
-    const audioBytes = audio.buffer.toString('base64');
-    const audioData = {
-      content: audioBytes,
-    };
-
-    const [response] = await client.recognize(config, audioData);
-    const transcription = response.results
-      .map((result) => result.alternatives[0].transcript)
-      .join('\n');
-    sendMessage(`Texto en el audio: ${transcription}`, chatHistory);
-  };
-
-  const handleImageChange = (e) => {
-    const image = e.target.files[0];
-    handleImageUpload(image);
-  };
-
-  const handleAudioChange = (e) => {
-    const audio = e.target.files[0];
-    handleAudioUpload(audio);
-  };
 
   return (
     <App title="TravelMate">
@@ -157,22 +117,6 @@ export default function Index() {
               </button>
             ) : null}
 
-            {/* Nuevo botón para cargar imágenes */}
-            <input
-              className="bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg"
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-            />
-
-            {/* Nuevo botón para cargar audios */}
-            <input
-              className="bg-purple-700 text-white font-bold py-2 px-4 rounded-r-lg"
-              type="file"
-              accept="audio/*"
-              onChange={handleAudioChange}
-            />
-
             <input
               type="text"
               ref={inputRef}
@@ -182,6 +126,7 @@ export default function Index() {
               onChange={(e) => setMessage(e.target.value)}
               disabled={state !== "idle"}
             />
+
             {state === "idle" ? (
               <button
                 className="bg-green-700 text-white font-bold py-2 px-4 rounded-r-lg"
