@@ -15,7 +15,9 @@ export default function Index() {
   const googleVisionApiKey = process.env.REACT_APP_GOOGLE_VISION_API_KEY;
   const googleSpeechToTextApiKey = process.env.REACT_APP_GOOGLE_SPEECH_TO_TEXT_API_KEY;
 
-
+  // Estado para almacenar la imagen y el archivo de audio
+  const [image, setImage] = useState(null);
+  const [audio, setAudio] = useState(null);
 
 
   // The content of the box where the user is typing
@@ -53,6 +55,19 @@ export default function Index() {
   useEffect(() => {
     focusInput();
   }, [state]);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+  // Función para manejar la carga de imágenes
+  const handleImageUpload = (file) => {
+    // Puedes realizar las operaciones necesarias con la imagen aquí
+    setImage(file);
+  };
+
+  // Función para manejar la carga de archivos de audio
+  const handleAudioUpload = (file) => {
+    // Puedes realizar las operaciones necesarias con el archivo de audio aquí
+    setAudio(file);
+  };
 
   return (
     <App title="TravelMate">
@@ -108,7 +123,16 @@ export default function Index() {
         </div>
 
         <section className="bg-gray-100 rounded-lg p-2">
-
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => handleImageUpload(e.target.files[0])}
+          />
+          <input
+            type="file"
+            accept="audio/*"
+            onChange={(e) => handleAudioUpload(e.target.files[0])}
+          />
         </section>
 
         <section className="bg-gray-100 rounded-lg p-2">
