@@ -77,7 +77,7 @@ export default function Index() {
 };
 
 // Función para manejar la carga de archivos de audio
-const handleAudioUpload = (file) => {
+const handleAudioUpload = async (file) => {
   // Puedes realizar las operaciones necesarias con el archivo de audio aquí
   setAudio(file);
 };
