@@ -106,6 +106,11 @@ export default function Index() {
             </button>
           )}
         </div>
+
+        <section className="bg-gray-100 rounded-lg p-2">
+
+        </section>
+
         <section className="bg-gray-100 rounded-lg p-2">
           <form
             className="flex"
