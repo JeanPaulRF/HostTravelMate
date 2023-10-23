@@ -55,7 +55,7 @@ export default function Index() {
   useEffect(() => {
     focusInput();
   }, [state]);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
 
   // Función para manejar la carga de imágenes
   const handleImageUpload = (file) => {
@@ -123,11 +123,18 @@ export default function Index() {
         </div>
 
         <section className="bg-gray-100 rounded-lg p-2">
+          <label className="text-gray-700 text-sm font-bold mb-2">
+            Carga una imagen
+          </label>
           <input
             type="file"
             accept="image/*"
             onChange={(e) => handleImageUpload(e.target.files[0])}
           />
+
+          <label className="ml-2 text-gray-700 text-sm font-bold mb-2">
+            Carga un archivo de audio
+          </label>
           <input
             type="file"
             accept="audio/*"
