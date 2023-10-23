@@ -6,6 +6,7 @@ import { appConfig } from "../../config.browser";
 import { Welcome } from "../components/Welcome";
 
 import { detectLandmarks } from '../components/vision';
+import { syncRecognize } from '../components/speech';
 
 
 export default function Index() {
