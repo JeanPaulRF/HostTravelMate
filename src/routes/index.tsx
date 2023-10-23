@@ -5,15 +5,14 @@ import { ChatMessage } from "../components/ChatMessage";
 import { appConfig } from "../../config.browser";
 import { Welcome } from "../components/Welcome";
 
+import { detectLandmarks } from '../components/vision';
+
 
 export default function Index() {
-  const vision = require('@google-cloud/vision');
-  const speech = require('@google-cloud/speech');
 
-  
-
-  
-
+  // Obtén las claves de API desde las variables de entorno
+  const googleVisionApiKey = process.env.REACT_APP_GOOGLE_VISION_API_KEY;
+  const googleSpeechToTextApiKey = process.env.REACT_APP_GOOGLE_SPEECH_TO_TEXT_API_KEY;
 
 
 

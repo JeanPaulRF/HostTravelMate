@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "golden-ego-401716",
+  "private_key_id": "945ea100f039162ab712ad270eb699ea4a5134de",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/YJu0O5S0b5Jn\n+lmVY3Ek+CkGS2t0ystQMszg/kYZIyMqtCJyi1yqE+jUxdKFcMYfEoFJqwBI8gMH\ndBnK04bsEKKeFcOTWQnWHvGCbRfVuSK3Ir3YaoXTf3P5o9Q2xjMEzEKNtZb5A5mU\nnSLTvd6p071jvCKZNbAbfpQmwRNG+56yKaO07mERNR00/Qtv0fx6aChEBiM5rEnW\nPW55YBH3TDJKqZ2boT94K5LiCBXvtvUtuB6+wcOuiEZJ00K0W6CV67ObNPNIVtXP\nB1l4OOqRxTg9FA1YFkUMomO0DTKCeGKjC3qOInQt+NQO4XKed2L5JyoqR5oFxkRH\nfpBuOIRFAgMBAAECggEAQ0dTxbtSblJw7lPhLXb9nkkNpxRZjQAEFMgfJZPOkeS7\n5rXYDFu48mO4bSC0f0vjoqXPRNY0bfCCpxqmPJs7af75JEkzbbgWEKvlLHxsrip9\nLVOt2QitzmoWm/L/1le8NNoYJZhqoFUnJ0tMpJKx1hNFl+vaX/EzXZ8Ut0EWJVQQ\nkrW6lc0h61sH8PHjUHN/vY+6sDc9QFm+sUFoUdxa97eSH0LnkOi0xddPu+CKi5Vj\nd2g9myuSPZl+0LKTqadvllltgWUTkvZNzUXQrepvxQ3hRhF05znL1eDNo7IBVYFD\n9TU+6loS3L90SpB8GSaDkWlA3O5Ll17U6ntp1VgpGwKBgQD0fVTMFQt2MvN3PXSl\n+bA4z3nuY6Nrv2UEmoqJ9xXiAPtAQ6jkFhHVoVVQ0HFjVvtgXZuxBUTflYI7DOQd\n2WtgOeSTaGPkGPHeKKDiRnMSFKJYlGpOMWH5HGlcBhvv4yGamexkhlUt0rIrRZch\nbHB/H2tcC0wn5l5tfD5Q4jvfawKBgQDIYya6y7q4PUxF5JQnolW9uPKoH7tzzCLC\nEE1jux9WnLmVMw2xjShICbcDGqh0VpwdB35H1I2afRtDEJtLL9P/hBnLYciNzdrR\nJ2QBRctQ4WMBNzgbC6x3z0JoZIcyTicdNcJPeZ8BOUQl0Qr/UHnwqxWncLtzIFyv\nhHOKT++HDwKBgQChfQc9pcjkUdMut5EM8FfNrn1DUNzolosK92j6qBH0LeHHGOm9\nfjZZfS71Kjk6/IEdrbbgvjI33HEgv+sNLEcYUCUCmLkiOLfJndxmmVH4Z1i0WZO+\nAjBMcs/E0OQzFzti+riBzZkFo12750Nj+FR2IzKuoWe0Ex3cA2zF0Cjr8QKBgCzO\nbtSJxWB45FskdzQ9iip39lo9bi7AUG1QM92+84zsUlrYJZGz3HPvKCrbhRsuWo3r\nJQNutZL7smLWjcLMGP0jTpk5bhy3ENx/kE7wiju1ieu1qyfw/klz4IdzIv/OldRk\nNuSKb1FYurIyAeGA3yM/PgJIpMFjVRYx6Zvdr9NlAoGAdDxLUU3Wcs07QPb3h/Gw\njcNabKXQRQoTLKilEOF6DrhFKZI6z1QsGgzihatIE1d8BGGnO1KPG8Xi62GDfmvk\nZYGTH4VFiWvbe1tf6JtVAgwJn3suk3WZX03ezqZHe/d19mFES5q0ELmmKkkNRSLg\nmMHbV0oSCVS6/Gehxpw2VzA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "travelmate@golden-ego-401716.iam.gserviceaccount.com",
+  "client_id": "101024033552948283423",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/travelmate%40golden-ego-401716.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
