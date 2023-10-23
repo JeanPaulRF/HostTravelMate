@@ -60,6 +60,7 @@ export default function Index() {
   // Función para manejar la carga de imágenes
   const handleImageUpload = async (file) => {
     // Puedes realizar las operaciones necesarias con la imagen aquí
+    console.log('Imagen cargada:', file);
     setImage(file);
 
     // Convierte la imagen a base64 (reemplázalo con tu lógica para convertir la imagen a base64)
