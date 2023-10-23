@@ -74,7 +74,7 @@ export default function Index() {
       console.error('Error al detectar landmarks:', error);
     }
   };
-};
+
 
 // Función para manejar la carga de archivos de audio
 const handleAudioUpload = async (file) => {
