@@ -59,16 +59,23 @@ export default function Index() {
 
   // Función para manejar la carga de imágenes
   const handleImageUpload = async (file) => {
-    // Puedes realizar las operaciones necesarias con la imagen aquí
-    console.log('Imagen cargada:', file);
-    setImage(file);
+    try {
+      // Puedes realizar las operaciones necesarias con la imagen aquí
+      console.log('Imagen cargada:', file);
+      setImage(file);
 
-    // Convierte la imagen a base64 (reemplázalo con tu lógica para convertir la imagen a base64)
-    //const base64Image = await convertirAbase64(file);
+      // Llama a detectLandmarks y obtén los textos de los landmarks
+      const texts = await detectLandmarks(file);
+      setMessage(texts.join(', ')); // Convierte el array en un solo string separado por comas
+      console.log('Textos de landmarks:', texts);
 
-    // Llama a detectLandmarks y obtén los textos de los landmarks
-
+      // Envía el mensaje al backend
+      //await sendMessage(texts.join(', '), chatHistory);
+    } catch (error) {
+      console.error('Error al detectar landmarks:', error);
+    }
   };
+
 
 
   // Función para manejar la carga de archivos de audio
@@ -137,7 +144,11 @@ export default function Index() {
           <input
             type="file"
             accept="image/*"
-            onChange={(e) => handleImageUpload(e.target.files[0])}
+            onChange={(e) => {
+              e.preventDefault();
+              handleImageUpload(e.target.files[0]);
+              setMessage("");
+            }}
           />
 
           <label className="ml-2 text-gray-700 text-sm font-bold mb-2">
