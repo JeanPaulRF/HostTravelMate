@@ -67,13 +67,7 @@ export default function Index() {
     //const base64Image = await convertirAbase64(file);
 
     // Llama a detectLandmarks y obtén los textos de los landmarks
-    try {
-      const texts = await detectLandmarks(file);
-      setMessage(texts);
-      console.log('Textos de landmarks:', texts);
-    } catch (error) {
-      console.error('Error al detectar landmarks:', error);
-    }
+
   };
 
 
