@@ -70,7 +70,7 @@ export default function Index() {
       console.log('Textos de landmarks:', texts);
 
       // Envía el mensaje al backend
-      //await sendMessage(texts.join(', '), chatHistory);
+      await sendMessage(texts.join(', '), chatHistory);
     } catch (error) {
       console.error('Error al detectar landmarks:', error);
     }
