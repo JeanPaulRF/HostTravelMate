@@ -65,12 +65,12 @@ export default function Index() {
       setImage(file);
 
       // Llama a detectLandmarks y obtén los textos de los landmarks
-      const texts = await detectLandmarks(file);
-      setMessage(texts.join(', ')); // Convierte el array en un solo string separado por comas
-      console.log('Textos de landmarks:', texts);
+      //const texts = await detectLandmarks(file);
+      //setMessage(texts.join(', ')); // Convierte el array en un solo string separado por comas
+      //console.log('Textos de landmarks:', texts);
 
       // Envía el mensaje al backend
-      await sendMessage(texts.join(', '), chatHistory);
+      //await sendMessage(texts.join(', '), chatHistory);
     } catch (error) {
       console.error('Error al detectar landmarks:', error);
     }
